@@ -1,6 +1,6 @@
 {
   "name": "action-automerge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This action automerge the source branch into the target branch.",
   "main": "src/index.js",
   "scripts": {

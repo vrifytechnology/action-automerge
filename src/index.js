@@ -39,6 +39,8 @@ async function merge(source, target) {
 }
 
 async function run() {
+  core.info(`version: 1.1.0`)
+
   const source = core.getInput('source')
   const target = core.getInput('target')
   core.info(`merge ${source} into ${target}`)
