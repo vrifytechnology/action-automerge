@@ -74497,18 +74497,23 @@ function capitalize(str) {
 async function slackFailedMessage(source, target, run_url) {
   if (!core.getInput('webhook_url')) return;
   slack.send({
-    icon_emoji: ":red_circle:",
-    username: `*${source}* has a merge conflict with *${target}*.`,
-    attachments: [
-        {
-            author_name: repository.full_name,
-            author_link: run_url,
-            title: `*${capitalize(source)}* has a merge conflict with *${target}*.`,
-            fields: [
-                { title: 'Merge Status', value: 'failed', short: false },
-                { title: 'Author', value: author, short: false },
-            ],
+    blocks: [
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `:face_with_head_bandage: *${capitalize(source)}* has a merge conflict with *${target}*\nAuthor: *${author}*`
         },
+      },
+      {
+        type: "button",
+        text: {
+          type: "plain_text",
+          text: "View Run :mag:",
+          emoji: true
+        },
+        url: run_url,
+      }
     ],
   });
 }
@@ -74524,7 +74529,7 @@ async function merge(source, target) {
 }
 
 async function run() {
-  core.info(`version: 1.2.0`)
+  core.info(`version: 1.3.1`)
 
   const source = core.getInput('source')
   const target = core.getInput('target')
