@@ -74527,7 +74527,7 @@ async function merge(source, target) {
 
 async function run() {
   core.info(`version: 1.2.0`)
-  core.info(JSON.stringify(github.context))
+  core.info(JSON.stringify(github))
 
   const source = core.getInput('source')
   const target = core.getInput('target')
