@@ -44,10 +44,12 @@ async function merge(source, target) {
 
 async function run() {
   core.info(`version: 1.2.0`)
-  core.info(`${ github.server_url }/${ github.repository }/actions/runs/${ github.run_id }`)
 
   const source = core.getInput('source')
   const target = core.getInput('target')
+  const run_url = core.getInput('run_url')
+
+  core.info(run_url)
   core.info(`merge ${source} into ${target}`)
 
   try {
