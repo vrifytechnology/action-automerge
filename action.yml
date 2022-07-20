@@ -11,6 +11,9 @@ inputs:
   target:
     description: 'Target branch, where the source branch is going to be merged into'
     required: true
+  run_url:
+    description: 'URL of the specific run'
+    required: true
   webhook_url:
     description: 'Slack webhook url'
     required: true
