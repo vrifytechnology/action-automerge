@@ -33,8 +33,6 @@ async function slackFailedMessage(source, target) {
 }
 
 async function merge(source, target) {
-  core.info(`merge branch:${source} to: ${target}`)
-
   await octokit.repos.merge({
     owner: repo.owner,
     repo: repo.repo,
@@ -46,6 +44,7 @@ async function merge(source, target) {
 
 async function run() {
   core.info(`version: 1.2.0`)
+  core.info(JSON.stringify(github.context))
 
   const source = core.getInput('source')
   const target = core.getInput('target')
