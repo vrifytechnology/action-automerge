@@ -28,7 +28,7 @@
     "@actions/core": ">=1.2.6",
     "@actions/github": "^1.1.0",
     "@vercel/ncc": "^0.34.0",
-    "slack-notify": "^0.1.7"
+    "slack-notify": "^2.0.0"
   },
   "devDependencies": {
     "node-fetch": ">=2.6.1"
